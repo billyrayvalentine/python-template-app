@@ -1,0 +1,2 @@
+# template-app command line args
+TEMPLATE_ARGS=-d DEBUG

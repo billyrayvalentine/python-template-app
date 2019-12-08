@@ -1,0 +1,11 @@
+[Unit]
+Description=This is the description of template-app
+
+[Service]
+EnvironmentFile=/etc/sysconfig/template-app
+ExecStart=/usr/bin/python3 /usr/local/template-app/template-app.py $TEMPLATE_ARGS
+User=template-app
+Group=template-app
+
+[Install]
+WantedBy=multi-user.target
