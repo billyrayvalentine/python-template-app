@@ -5,7 +5,7 @@ Summary: A simple Python boiler plate application
 License: TODO
 
 Url: https://github.com/billyrayvalentine/python-template-app
-Source0: https://github.com/billyrayvalentine/python-template-app/archive/template-app-%{version}.tar.gz
+Source0: https://github.com/billyrayvalentine/python-template-app/archive/%{version}.tar.gz
 Requires: python3
 
 %description
@@ -16,9 +16,10 @@ getent group %{name} >/dev/null || groupadd -r %{name}
 getent passwd %{name} >/dev/null || useradd -r -g %{name} -d /usr/local/%{name} -s /sbin/nologin -c "System user for %{name}" %{name}
 
 %prep
-# Archive does not have a sub directory so use setup -c
 # See https://rpm-packaging-guide.github.io/#setup
-%setup -c
+# The app name is template-app but the repo is actually python-template-app
+# so tell setup to expect a different name
+%setup -n python-template-app-%{version}
 
 %install
 mkdir -p %{buildroot}/usr/local/%{name}
