@@ -3,7 +3,7 @@ A boilerplate for a Linux Python3 application which includes:
 
  * systemd servicefile 
  * /etc/sysconfig/ config file
- * RPM Build spec
+ * RPM Build spec - also creates a system user which the application runs as
  * Includes a sample Polkit rules template
 
 The Python application template itself is a simple boilerplate which sets up:
